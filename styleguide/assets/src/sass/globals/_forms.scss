@@ -28,7 +28,7 @@ select,
   @include border-radius(24px);
   &:focus {
     border: none;
-    outline:none;
+    outline: none;
     @include box-shadow(none);
   }
   &.error {
