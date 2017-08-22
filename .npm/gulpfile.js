@@ -1,94 +1,84 @@
-var gulp   = require('gulp');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+var gulp = require('gulp');
 var coffee = require('gulp-coffee');
-var sass   = require('gulp-ruby-sass');
-var rename = require('gulp-rename');
-var es     = require('event-stream');
-var shell  = require('gulp-shell');
-var notify = require('gulp-notify');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var sourcemaps = require('gulp-sourcemaps');
+var del = require('del');
+// var sass = require('node-sass');
+var scsslint   = require('gulp-scss-lint');
+var minifyCss  = require('gulp-minify-css');
+var sass       = require('gulp-sass');
 
-// Error handling.
-function onError(err) {
-  console.log(err.toString());
-  this.emit('end');
+var paths = {
+  scripts: ['../styleguide/assets/src/js/**/*.coffee', '../styleguide/assets/js/**/*.coffee'],
+  // js: ['../assets/src/js/**/*.js', '../assets/js/**/*.js'],
+  images: ['../styleguide/assets/src/images/**/*', '../styleguide/assets/images'],
+  // sass: ['../styleguide/assets/src/sass/**/*', '../styleguide/assets/css']
 };
-
-
-/**
- * Config settings.
- */
-var config = {
-  sass: '../styleguide/assets/src/sass/**/*.scss',
-  sassStyle: 'compressed',
-  cssDest: '../styleguide/assets/css',
-  js: '../styleguide/assets/src/js/**/*.js',
-  jsDest: '../styleguide/assets/js',
-  siteAlias: ''
-};
-
-
-/**
- * Allows us to just run gulp within our project.
- */
-gulp.task('default', ['styles', 'scripts'], function() {
-  // Watch for updates
-  gulp.watch(config.js, ['scripts']);
-  gulp.watch('../styleguide/assets/src/sass/**/*.scss', ['styles']);
-  // Shall commands - clear drupal cache.
-  gulp.watch('**/*.{php,inc,info}',['drush']);
+var scssSrc    = '../styleguide/assets/src/sass/**/*',
+    cssDst     = '../styleguide/assets/css';
+ 
+// Not all tasks need to use streams 
+// A gulpfile is just another node program and you can use any package available on npm 
+gulp.task('clean', function() {
+  // You can use multiple globbing patterns as you would with `gulp.src` 
+  return del(['build']);
 });
 
-
-/**
- * Compile SASS :)
- */
-gulp.task('styles', function() {
-  return gulp.src(config.sass)
-    .pipe(sass({
-      'sourcemap=none': true,
-      noCache: true,
-      compass: true,
-      style: 'compact'
-    }).on('error', onError))
-    .pipe(gulp.dest(config.cssDest))
-    .pipe(gulp.dest(config.cssDest2))
-    .pipe(sass({
-      'sourcemap=none': true,
-      noCache: true,
-      compass: true,
-      style: config.sassStyle
-    }).on('error', onError))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(config.cssDest))
-    .pipe(gulp.dest(config.cssDest2))
-    .pipe(notify({message: 'SCSS compiled'}));
+/* Lint SCSS (For Ordering CSS property) */
+gulp.task('scss-lint', function() {
+  return gulp.src(scssSrc)
+    .pipe(scsslint({
+      'config': 'scss-lint.yml'
+    }));
 });
 
-
-/**
- * Minify JS
- */
-gulp.task('scripts',function() {
-  return gulp.src(config.js)
-    .pipe(concat('site.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(config.jsDest))
-    .pipe(gulp.dest(config.jsDest2))
-    .pipe(notify({message: 'JS compiled'}));
+/* Generate css & minify it */
+gulp.task('sass', function () {
+  return gulp.src('../styleguide/assets/src/sass/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest(cssDst));
 });
+/*gulp.task('sass', ['clean'], function() {
+  return gulp.src(paths.sass)
+    .pipe(sourcemaps.init())
+      .pipe(sass())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('../styleguide/assets/css'));
+});*/
 
-gulp.task('drush', function() {
-  return gulp.src('*.js', {read: false})
-    .pipe(shell([
-      'echo <%= f(file.path) %>',
-      'ls -l <%= file.path %>',
-      'drush'
-    ], {
-      templateData: {
-        f: function (s) {
-          return s.replace(/$/, '.bak')
-        }
-      }
-    }))
+gulp.task('scripts', ['clean'], function() {
+  // Minify and copy all JavaScript (except vendor scripts) 
+  // with sourcemaps all the way down 
+  return gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
+      .pipe(coffee())
+      // .pipe(js())
+      .pipe(uglify())
+      .pipe(concat('all.min.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('../styleguide/assets/js'));
 });
+ 
+// Copy all static images 
+gulp.task('images', ['clean'], function() {
+  return gulp.src(paths.images)
+    // Pass in options to the task 
+    .pipe(imagemin({optimizationLevel: 20}))
+    .pipe(gulp.dest('../styleguide/assets/images'));
+});
+ 
+// Rerun the task when a file changes 
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+  // gulp.watch(paths.js, ['js']);
+  gulp.watch(paths.images, ['images']);
+  // gulp.watch(paths.sass, ['sass']);
+  gulp.watch(scssSrc, ['sass']);
+  gulp.watch(scssSrc, ['scss-lint']);
+});
+ 
+// The default task (called when you run `gulp` from cli) 
+gulp.task('default', ['watch', 'scripts', 'images', 'sass', 'scss-lint']);
