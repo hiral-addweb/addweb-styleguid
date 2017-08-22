@@ -1,0 +1,21 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Design of Typography.
+ */
+
+/* Alignment */
+.flex { @include flexbox(); }
+
+.inline-flex { @include inline-flex; }
+
+.flex-wrap { @include flex-wrap(wrap) }
+
+.vertical-align-top { @include align-items(flex-start); }
+
+.vertical-align-bottom { @include align-items(flex-end); }
+
+.vertical-align-middle { @include align-items(center); }
+
+

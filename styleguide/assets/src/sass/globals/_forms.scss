@@ -1,0 +1,46 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Form SCSS
+ * - Custom file design
+ */
+
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='tel'],
+textarea,
+select,
+.resizable-textarea textarea,
+.form-control {
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  color: $black;
+  font-size: $font-size-16;
+  font-family: $opensans-regular;
+  @include box-shadow(none);
+  @include border-radius(24px);
+  &:focus {
+    border: none;
+    outline:none;
+    @include box-shadow(none);
+  }
+  &.error {
+    border: 2px solid #A94442;
+  }
+}
+.resizable-textarea textarea,
+textarea {
+  height: 166px;
+}
+.webform-component-textarea {
+  .grippie {
+    display: none;
+  }
+}

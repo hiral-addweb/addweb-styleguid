@@ -1,0 +1,121 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Components design.
+ */
+
+ul.social-icons {
+  display: inline-block;
+  li {
+    float: left;
+    padding: 0 4px;
+    &:last-child {
+      padding-right: 0;
+    }
+    a {
+      display: inline-block;
+      color: $white;
+      font-size: 0;
+      @include transition(all .5s ease);
+      &:hover,
+      &:focus,
+      &:visited,
+      &:active { text-decoration: none; }
+      &::before {
+        display: inline-block;
+        /*height: 20px;
+        width: 20px;*/
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        font-family: FontAwesome;
+        content: '\f1a9';
+        @media (max-width: 1200px) { font-size: 16px;}
+      }
+    }
+    &.drupal {
+      &:hover {
+        a { color: #0075BB; }
+      }
+    }
+    &.facebook {
+      &:hover {
+        a {
+          color: #3B579D;
+        }
+      }
+      a {
+        &::before { content: '\f09a'; }
+      }
+    }
+    &.googleplus {
+      &:hover {
+        a { color: #DB4437; }
+      }
+      a {
+        &::before { content: '\f0d5'; }
+      }
+    }
+    &.skype {
+      &:hover {
+        a { color: #55ACEE; }
+      }
+      a {
+        &::before { content: '\f17e'; }
+      }
+    }
+    &.email {
+      &:hover {
+        a { color: #DC4034; }
+      }
+      a {
+        &::before { content: '\f003'; }
+      }
+    }
+    &.linkedin {
+      &:hover {
+        a { color: #0177B5; }
+      }
+      a {
+        &::before { content: '\f0e1'; }
+      }
+    }
+    &.twitter {
+      &:hover {
+        a { color: #1DA1F2; }
+      }
+      a {
+        &::before { content: '\f099'; }
+      }
+    }
+    &.Youtube {
+      &:hover {
+        a { color: #C2171D; }
+      }
+      a {
+        &::before { content: '\f16a'; }
+      }
+    }
+  }
+}
+
+/* Social icon Zoom effect */
+.social-animation-icons {
+  &:hover {
+    li {
+      a {
+        opacity: .8;
+        @include transition(all .5s ease);
+        @include transform(scale(.8));
+      }
+      &:hover {
+        a {
+          opacity: 1;
+          @include transform(scale(1.4));
+        }
+      }
+    }
+  }
+}
+/* End */
