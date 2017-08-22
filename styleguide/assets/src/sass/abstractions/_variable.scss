@@ -28,10 +28,15 @@ $url-opensans-light: url('../fonts/OpenSans/OpenSans-Light.woff');
 
 
 /* Color code */
-$white:    #FFF;
-$black:    #000;
-$grey-cc:  #CCC;
-$black-44: #444;
+$white:     #FFF;
+$black:     #000;
+$grey-cc:   #CCC;
+$black-44:  #444;
+$black-4a:  #4A4A4A;
+$blue-link: #0B78BD;
+$gray-47:   #474747;
+$gray-b8:   #B8B8B8;
+$blue-00:   #0055A8;
 
 
 
@@ -53,7 +58,7 @@ $stackoverflow-hover: url('../images/stackoverflow-hover.png');
 
 
 /* Font size */
-$font-size-base: 16px;
+$font-size-base: 14px;
 
 
 $font-size-10: .625rem; //10px
@@ -81,7 +86,7 @@ $font-size-60: 3.75rem; // 60px
 $font-size-80: 5rem; // 80px
 
 /**
- * Media query ( for responsive design )
+ * Media query (for responsive design)
  */
 $small-desktop: 1200px;
 $ipad: 1024px;

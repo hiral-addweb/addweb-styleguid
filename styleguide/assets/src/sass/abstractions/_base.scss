@@ -12,7 +12,7 @@
 
 body {
   font-size: $font-size-base;
-  font-family: $opensans-light;
+  font-family: $opensans-regular;
 }
 
 a {
@@ -29,10 +29,12 @@ img {
   max-width: 100%;
 }
 
+iframe,
 video {
   height: auto;
   width: 100%;
 }
+
 
 b,
 strong {

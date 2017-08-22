@@ -123,9 +123,9 @@
 }
 
 @mixin font-color-set-dark-grey {
-  *:not(.btn):not(input):not(textarea):not(select):not(.form-control) { color: $grey-dark; }
+  *:not(.btn):not(input):not(textarea):not(select):not(.form-control) { color: $black-4a; }
   a:not(.btn) {
-    &:hover { color: $grey-dark; }
+    &:hover { color: $black-4a; }
   }
 }
 

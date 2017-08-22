@@ -9,6 +9,10 @@
   background-color: $black;
   @include font-color-set-white();
 }
+.grey-text {
+  @include font-color-set-dark-grey();
+}
+
 
 /* Hire us section desin */
 .hire-us {
@@ -69,6 +73,7 @@
       padding: 20px 30px;
       background-color: #FBAC5F;
       color: $white;
+      font-size: $font-size-30;
       @include border-radius(4px);
       &:hover {
         text-decoration: none;
@@ -108,6 +113,92 @@
   &.reveal-footer {
     @include transform(scale(.9) translate3d(0, 5%, 0));
     @include box-shadow(0 90px 90px -80px rgba(0, 0, 0, .75));
+  }
+}
+/* End */
+
+/* Tag Cloud design */
+.tag-cloud {
+  li {
+    display: inline-block;
+    a {
+      display: inline-block;
+      margin: 3px 2px;
+      padding: 5px 10px;
+      border-left: none;
+      background-color: $gray-47;
+      color: $gray-b8;
+      font-size: $font-size-15;
+      line-height: 18px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      @include border-radius(3px);
+      &:hover,
+      &:focus {
+        background-color: $blue-00;
+        color: $white;
+      }
+    }
+  }
+}
+/* End */
+
+/* Icons design */
+.icon {
+  position: relative;
+  margin-bottom: 5px;
+  a {
+    padding-left: 30px;
+    &:before {
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      height: 18px;
+      width: 23px;
+      background-image: url('../images/contact-icons.png');
+      background-repeat: no-repeat;
+      vertical-align: top;
+      content: '';
+    }
+  }
+  &.skype-icon {
+    a {
+      &::before {
+        background-position: right 0;
+        background-size: 200px;
+      }
+    }
+  }
+  &.flag-icon {
+    a {
+      &::before {
+        background-image: $contact-icon;
+        background-position: top 2px left -28px;
+        background-size: 163px;
+      }
+    }
+  }
+  &.email-icon {
+    a {
+      &::before {
+        background-position: -57px 1px;
+        background-size: 170px;
+      }
+    }
+  }
+}
+/* End */
+
+/* Text translate effect */
+.text-slide {
+  a {
+    display: inline-block;
+    width: 100%;
+    @include transition(all 400ms linear);
+    &:hover {
+      text-indent: 2px;
+    }
   }
 }
 /* End */

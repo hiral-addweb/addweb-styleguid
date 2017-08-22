@@ -19,3 +19,24 @@
 .vertical-align-middle { @include align-items(center); }
 
 
+/* Bottom dotted border title design */
+.title-border {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted $black-4a;
+  font-size: $font-size-28;
+  font-family: $opensans-semibold;
+}
+
+/* Link design */
+.blue-link {
+  a:not(.btn) {
+    color: $blue-link !important;
+    &:active,
+    &:hover,
+    &:visited,
+    &:focuse {
+      color: $blue-link !important;
+    }
+  }
+}
