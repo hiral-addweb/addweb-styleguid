@@ -11,7 +11,7 @@ var minifyCss  = require('gulp-minify-css');
 var sass       = require('gulp-sass');
 
 var paths = {
-  scripts: ['../styleguide/assets/src/js/**/*.coffee', '../styleguide/assets/js/**/*.coffee'],
+  scripts: ['../styleguide/assets/src/js/**/*.coffee.js', '../styleguide/assets/js/**/*.coffee.js'],
   // js: ['../assets/src/js/**/*.js', '../assets/js/**/*.js'],
   images: ['../styleguide/assets/src/images/**/*', '../styleguide/assets/images'],
   // sass: ['../styleguide/assets/src/sass/**/*', '../styleguide/assets/css']
@@ -55,7 +55,6 @@ gulp.task('scripts', ['clean'], function() {
   return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
       .pipe(coffee())
-      // .pipe(js())
       .pipe(uglify())
       .pipe(concat('all.min.js'))
     .pipe(sourcemaps.write())
@@ -66,7 +65,7 @@ gulp.task('scripts', ['clean'], function() {
 gulp.task('images', ['clean'], function() {
   return gulp.src(paths.images)
     // Pass in options to the task 
-    .pipe(imagemin({optimizationLevel: 20}))
+    .pipe(imagemin({optimizationLevel: 10}))
     .pipe(gulp.dest('../styleguide/assets/images'));
 });
  
@@ -81,4 +80,4 @@ gulp.task('watch', function() {
 });
  
 // The default task (called when you run `gulp` from cli) 
-gulp.task('default', ['watch', 'scripts', 'images', 'sass', 'scss-lint']);
+gulp.task('default', ['watch', 'scripts', 'sass', 'scss-lint']); // , 'images'
