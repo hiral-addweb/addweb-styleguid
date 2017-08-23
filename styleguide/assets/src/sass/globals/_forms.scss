@@ -44,3 +44,22 @@ textarea {
     display: none;
   }
 }
+
+.btn {
+  display: inline-block;
+  height: 38px;
+  width: 122px;
+  padding: 7px 15px;
+  border: 2px solid $blue-6f;
+  @include background ($blue-15, $blue-15, $blue-86, $blue-86);
+  @include border-radius(4px);
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  @include box-shadow(none);
+  &:hover {
+    @include background ($blue-72, $blue-72, $dark-blue, $dark-blue);
+    color: $white;
+  }
+}

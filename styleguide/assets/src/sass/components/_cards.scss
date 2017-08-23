@@ -5,4 +5,123 @@
  * Cards design.
  */
 
+/* blog cards design */
+.blog-wraper-main {
+  display: inline-block;
+  width: 100%;
+  .blogs-wrapper {
+    float: left;
+    display: inline-block;
+    width: 48%;
+    margin-right: 4%;
+    padding-bottom: 40px;
+    @media (max-width: 992px) {
+      width: 100%;
+      margin-right: 0;
+    }
+    &:nth-child(2n) {
+      clear: left;
+    }
+    &:nth-child(2n + 1) {
+      margin-right: 0;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      clear: right;
+      margin-right: 0;
+    }
+    .blogs-upper {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 20px;
+      > div {
+        float: left;
+        width: 50%;
+      }
+      .blogs-upper-right {
+        padding-left: 15px;
+      }
+      @media (max-width: 1200px) {
+        .blogs-upper-left {
+          max-width: 225px;
+        }
+        .blogs-upper-right {
+          @include calc('width', '100% - 225px');
+        }
+      }
+      @media (max-width: 480px) {
+        .blogs-upper-left,
+        .blogs-upper-right {
+          max-width: 100%;
+          width: 100%;
+          padding-left: 0;
+        }
+      }
+    }
+    .blogs-bottom {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 0;
+      border-top: 1px solid $grey-cc;
+      border-bottom: 1px solid $grey-cc;
+      img {
+        height: 25px;
+        width: 25px;
+      }
+      a,
+      > div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    &:first-child {
+      margin-right: 4%;
+      .blogs-upper {
+        > div {
+          width: 100%;
+        }
+        .blogs-upper-left {
+          margin-bottom: 20px;
+        }
+        .blogs-upper-right {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+/* End */
 
+/* Latest blog card design */
+.latest-blog-wrap {
+  position: relative;
+  &.blog-lg {
+    .image-caption {
+      padding: 0;
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+    .blog-date {
+      &::after { display: none; }
+    }
+    .read-more-icon {
+      display: inline-block;
+      margin-top: 30px;
+    }
+    .profile-wrap {
+      float: left;
+      width: 33%;
+      padding: 15px;
+      background-color: $purple;
+      text-align: center;
+    }
+    .blog-info {
+      float: left;
+      width: 67%;
+      padding: 15px 10px; 
+    }
+  }
+}
+/* End */

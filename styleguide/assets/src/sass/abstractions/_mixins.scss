@@ -174,3 +174,11 @@
   background:         linear-gradient(to bottom, $top 0%, $middle 70.5%, $bottom 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0);
 }
+
+@mixin background($value, $value2, $value3, $value4) {
+  background: $value;
+  background: -moz-linear-gradient(top, $value 0%, $value2 5%, $value3 70%, $value4 100%);
+  background: -webkit-linear-gradient(top, $value 0%, $value2 5%, $value3 70%, $value4 100%);
+  background: linear-gradient(to bottom, $value 0%, $value2 5%, $value3 70%, $value4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$value', endColorstr='$value4',GradientType=0);
+}

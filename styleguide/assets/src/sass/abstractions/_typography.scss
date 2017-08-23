@@ -35,8 +35,62 @@
     &:active,
     &:hover,
     &:visited,
-    &:focuse {
-      color: $blue-link !important;
+    &:focus {
+      color: $black-4a !important;
     }
   }
 }
+
+/* Page title design */
+.page-title {
+  display: inline-block;
+  margin: 30px 0;
+  padding-bottom: 5px;
+  border-bottom: 5px solid $black;
+  font-size: $font-size-50;
+  font-family: $opensans-bold;
+}
+/* End */
+
+/* Blog Title design */
+.blog-title {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  font-size: $font-size-28;
+  font-family: $opensans-semibold;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* End */
+
+/* Section title design */
+.section-title {
+  margin-bottom: 30px;
+  color: rgba($black-4a, .9);
+  font-size: $font-size-36;
+  font-family: $opensans-semibold;
+  text-transform: uppercase;
+}
+/* End */
+
+/* Read more icon design */
+.read-more-icon {
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    display: inline-block;
+    height: 14px;
+    width: 9px;
+    margin-top: -7px;
+    margin-left: 10px;
+    background-image: url('../images/read-more-icon.png');
+    background-repeat: no-repeat;
+    content: '';
+  }
+}
+/* End */
