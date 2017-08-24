@@ -5,10 +5,16 @@
  * Components design.
  */
 
-.black-bg {
+
+.black-bg { /* temporary class */
   background-color: $black;
   @include font-color-set-white();
 }
+
+.white-text {
+  @include font-color-set-white();
+}
+
 .grey-text {
   @include font-color-set-dark-grey();
 }
@@ -30,6 +36,7 @@
   display: inline-block;
   min-height: 510px;
   width: 100%;
+  margin-top: 30px;
   padding: 120px 0;
   background-image: url('../images/hireus-bg.jpg');
   background-size: cover;

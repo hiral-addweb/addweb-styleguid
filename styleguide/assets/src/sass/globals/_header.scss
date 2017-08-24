@@ -350,6 +350,112 @@
     }
   }
 }
-
 /* End */
+
+/* Sticky header design */
+.sticky-header {
+  .main-header {
+    height: 53px;
+    background-color: $black;
+    @media (max-width: 992px) {
+      height: 56px;
+    }
+    @media (max-width: 640px) {
+      height: 40px;
+    }
+  }
+  .top-header { padding-bottom: 15px; }
+  .header-contact-wrap {
+    @media (max-width: 640px) {
+      display: none;
+    }
+    li {
+      &:last-child {
+        position: relative;
+        top: -100px;
+      }
+    }
+  }
+  .header {
+    .main-menu {
+      margin-top: -38px;
+      padding-bottom: 0;
+      @media (max-width: 992px) {
+        margin-top: 0;
+      }
+      &.main-menu-left {
+        margin-right: 35px;
+        margin-left: 0;
+        .mega-menu-wrapper {
+          left: -13vw;
+          width: 1170px;
+          margin-right: auto;
+          margin-left: auto;
+          padding: 0 15px;
+          .sidebar-left {
+            .home-images {
+              top: 35%;
+            }
+          }
+        }
+        @media (max-width: 1024px) {
+          margin-right: 27px;
+        }
+        @media (max-width: 992px) {
+          margin-top: 0;
+          margin-right: 0;
+        }
+      }
+      &.main-menu-right {
+        margin-right: 0;
+        margin-left: 35px;
+        @media (max-width: 992px) {
+          margin-left: 0;
+        }
+      }
+      ul {
+        padding-top: 0;
+        li {
+          padding-right: 0;
+          padding-left: 0;
+          &:hover {
+            > ul {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      height: 68px;
+      overflow: hidden;
+      @media (max-width: 640px) {
+        float: left;
+        left: 0;
+        height: 30px;
+        width: 234px;
+        margin-top: -36px;
+        margin-left: 8px;
+        background-image: url('/themes/custom/addweb/images/stickey-header-mobile-logo.png');
+        background-repeat: no-repeat;
+        background-size: 234px;
+        img {
+          display: none;
+        }
+      }
+    }
+    .mobile-menu-btn {
+      @media (max-width: 640px) {
+        margin-top: -30px;
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    a.social-icon-link {
+      margin: -4px 35px 0 0;
+    }
+  }
+}
+/* End */
+
 
