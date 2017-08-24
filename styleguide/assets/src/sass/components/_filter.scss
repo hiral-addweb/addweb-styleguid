@@ -41,11 +41,22 @@
 }
 .filter__content {
   .filter__item {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 1vw;
+    border: 1px solid #grey-cc;
     .filter__item-img {
-      /* code */
+      float: left;
+      min-height: 100px;
+      min-width: 100px;
+      background-color: $grey-cc;
     }
     .filter__item-body {
-      /* code */
+      float: left;
+      display: inline-block;
+      @include calc('width', '100% - 120px');
+      margin-left: 20px;
     }
   }
 }
