@@ -6,17 +6,38 @@
  */
 
 .filter {
+  /* code */
+}
+.filter__links {
   ul {
+    text-align: center;
     li {
-      lable { /* code */ }
+      display: inline-block;
+      width: auto;
+      margin: 0 .5vw;
+      label {
+        float: left;
+        height: 100%;
+        width: 100%;
+        padding: 1vw 2vw;
+        border: 2px solid $black;
+        color: $black;
+        font-size: 1.4rem;
+        cursor: pointer;
+        @include border-radius(4px);
+        &.active,
+        &:hover {
+          border: 2px solid $blue-00;
+          background-color: $blue-00;
+          color: $white;
+        }
+      }
       input[type='radio'] {
-        /* code */
+        position: absolute;
+        opacity: 0;
       }
     }
   }
-}
-.filter__links {
-  /* code */
 }
 .filter__content {
   .filter__item {
