@@ -6,11 +6,6 @@
  */
 
 
-.black-bg { /* temporary class */
-  background-color: $black;
-  @include font-color-set-white();
-}
-
 .white-text {
   @include font-color-set-white();
 }
@@ -331,3 +326,17 @@
   }
 }
 /* End */
+
+/**
+ * Section types and background color
+ */
+ /* Black background */
+.black-bg {
+  background-color: $black;
+  @include font-color-set-white();
+}
+/* White background */
+.white-bg {
+  background-color: $white;
+  @include font-color-set-dark-grey();
+}

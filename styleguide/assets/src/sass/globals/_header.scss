@@ -12,10 +12,19 @@
   z-index: 1000;
   display: block;
   width: 100%;
-  background-color: transparent;
+  background-color: $black;
   @include transition(all .5s ease 0s);
 }
-.top-header {
+.path-frontpage {
+  .main-header {
+    background-color: transparent;
+  }
+}
+/* Header background for inner pages */
+.header-bg {
+  height: 135px;
+}
+.pre-header {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -364,7 +373,7 @@
       height: 40px;
     }
   }
-  .top-header { padding-bottom: 15px; }
+  .pre-header { padding-bottom: 15px; }
   .header-contact-wrap {
     @media (max-width: 640px) {
       display: none;
