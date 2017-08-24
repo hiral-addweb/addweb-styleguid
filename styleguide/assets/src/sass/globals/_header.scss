@@ -12,14 +12,10 @@
   z-index: 1000;
   display: block;
   width: 100%;
-  background-color: $black;
+  background-color: transparent;
   @include transition(all .5s ease 0s);
 }
-.path-frontpage {
-  .main-header {
-    background-color: transparent;
-  }
-}
+
 /* Header background for inner pages */
 .header-bg {
   height: 135px;
@@ -29,7 +25,7 @@
   display: inline-block;
   width: 100%;
   margin: 0;
-  padding: 15px 0 24px;
+  padding: 15px 0;
   color: $white;
   @include transition(all .5s ease 0s);
   @media (max-width: 992px) {
