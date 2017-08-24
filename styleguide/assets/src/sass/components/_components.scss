@@ -1,10 +1,19 @@
-/**
+/*
  * @file
  * SCSS file to generate CSS.
  *
  * Components design.
  */
 
+
+/* Left top bottom borader radius 0 */
+.radius-top-bottom-left-0 {
+  @include border-radius(0 3px 3px 0);
+}
+/* Right top bottom borader radius 0 */
+.radius-top-bottom-right-0 {
+  @include border-radius(3px 0 0 3px);
+}
 
 .white-text {
   @include font-color-set-white();
@@ -16,6 +25,9 @@
 
 .light-grey-text {
   color: rgba($black-4a, .5);
+  a {
+    color: rgba($black-4a, .5);
+  }
 }
 
 .grey-border {
@@ -161,7 +173,7 @@
   a,
   span {
     padding-left: 30px;
-    &:before {
+    &::before {
       position: absolute;
       left: 0;
       display: inline-block;
@@ -249,15 +261,20 @@
 /* Field tag design */
 .field-tags {
   margin-bottom: 15px;
-  a {
-    &::after {
-      display: inline-block;
-      padding: 0 5px;
-      content: '/';
+  li {
+    display: inline-block;
+    a {
+      &::after {
+        display: inline-block;
+        padding: 0 5px;
+        content: '/';
+      }
     }
     &:last-child {
-      &::after {
-        display: none;
+      a {
+        &::after {
+          display: none;
+        }
       }
     }
   }
@@ -327,6 +344,52 @@
 }
 /* End */
 
+/* Stay in touch */
+.stay-in-touch {
+  display: inline-block;
+  width: 100%;
+  margin-top: 75px;
+  padding: 80px 0;
+  background-image: url('../images/background_newsletter.jpg');
+  background-size: cover;
+  color: $white;
+  text-align: center;
+  .subscrib-form {
+    display: inline-block;
+    max-width: 910px;
+  }
+  h2 {
+    font-size: $font-size-80;
+    font-family: $opensans-bold;
+    text-transform: capitalize;
+    @media (max-width: 992px) {
+      font-size: $font-size-50;
+    }
+    @media (max-width: 767px) {
+      font-size: $font-size-50;
+    }
+  }
+  p {
+    margin-bottom: 35px;
+    font-size: $font-size-40;
+    font-family: $opensans-light;
+  }
+  form {
+    .form-item,
+    .form-actions {
+      display: inline-block;
+    }
+    input {
+      width: 380px;
+      @extend .radius-top-bottom-right-0;
+    }
+    button {
+      margin-left: -5px;
+    }
+  }
+}
+/* End */
+
 /**
  * Section types and background color
  */
@@ -340,3 +403,92 @@
   background-color: $white;
   @include font-color-set-dark-grey();
 }
+/* Overlay design */
+.overlay {
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($orange, .8);
+    content: '';
+  }
+}
+/* End */
+
+/* Meet Our Team Section Design */
+.meet-our-team,
+.hire-do-wrap {
+  position: relative;
+  .content__wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 50px;
+    @include transform(translateY(-50%));
+  }
+  h2 {
+    margin-top: 0;
+    font-size: $font-size-160;
+    font-family: $opensans-bold;
+  }
+  h4 {
+    margin-bottom: 20px;
+    color: $orange-f4 !important;
+    font-size: $font-size-30;
+    font-family: $opensans-bold;
+  }
+  p {
+    max-width: 600px;
+    font-size: $font-size-40;
+    line-height: 40px;
+    font-family: $opensans-light;
+    letter-spacing: 1.7px;
+  }
+  .meet-btn {
+    display: inline-block;
+    min-width: 258px;
+    margin-top: 30px;
+    padding: 18px 20px;
+    background-color: $orange-f4;
+    font-size: 15px;
+    line-height: 25px;
+    font-family: $opensans-regular;
+    text-align: center;
+    text-decoration: none;
+    @include border-radius(3px);
+  }
+}
+/* End */
+
+/* Do you know section Desin */
+.hire-do-wrap {
+  display: inline-block;
+  width: 100%;
+  padding: 70px 15px;
+  h2 {
+    position: relative;
+    margin-bottom: 50px;
+    &::after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 50%;
+      display: inline-block;
+      height: 3px;
+      width: 25%;      
+      margin-bottom: -35px;
+      background-color: $black-44;
+      @include transform(translateX(-50%));
+      content: '';
+    }
+  }
+  p {
+    max-width: 100%;
+  }
+}
+/* End */

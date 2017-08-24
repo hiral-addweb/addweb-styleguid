@@ -31,12 +31,12 @@
 /* Link design */
 .blue-link {
   a:not(.btn) {
-    color: $blue-link !important;
+    color: $blue-link;
     &:active,
     &:hover,
     &:visited,
     &:focus {
-      color: $black-4a !important;
+      color: $black-4a;
     }
   }
 }
