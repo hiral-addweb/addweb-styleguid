@@ -10,31 +10,37 @@
 }
 .filter__links {
   ul {
+    margin: 0 0 2vw;
     text-align: center;
     li {
       display: inline-block;
       width: auto;
-      margin: 0 .5vw;
+      margin: 0 .7vw 2vw;
       label {
         float: left;
         height: 100%;
         width: 100%;
-        padding: 1vw 2vw;
-        border: 2px solid $black;
+        margin: 0;
+        padding: .55vw 2vw .65vw;
+        border: 1px solid $grey-de;
         color: $black;
-        font-size: 1.4rem;
+        font-size: $font-size-14;
+        line-height: normal;
+        font-family: $opensans-light;
+        text-transform: uppercase;
         cursor: pointer;
-        @include border-radius(4px);
+        @include border-radius(2px);
         &.active,
         &:hover {
-          border: 2px solid $blue-00;
-          background-color: $blue-00;
+          border: 1px solid $blue-72;
+          background-color: $blue-72;
           color: $white;
         }
       }
       input[type='radio'] {
         position: absolute;
         opacity: 0;
+        margin: 0;
       }
     }
   }
