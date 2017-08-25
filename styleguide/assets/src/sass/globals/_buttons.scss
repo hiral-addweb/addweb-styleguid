@@ -58,6 +58,7 @@
 .btn-grey {
   background-color: $grey-e7;
   background-image: none;
+  color: $black-4a;
   &:hover {
     background-color: $grey-e7;
     background-image: none;
@@ -66,7 +67,6 @@
 
 .btn-switch {
   border: none;
-  color: $black-4a;
   @include box-shadow(0 3px 0 0 rgba(192, 192, 192, .8));
   &:hover {
     top: 1px;
