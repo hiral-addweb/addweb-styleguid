@@ -1,5 +1,15 @@
 (function ($) {
   $(function() {
+    /* Sticky Header */
+    jQuery(window).scroll(function() {
+      var scrolled = jQuery(window).scrollTop();
+      if(scrolled >= 52) {
+        jQuery('body').addClass('sticky-header');
+      }
+      else {
+        jQuery('body').removeClass('sticky-header');
+      }
+    });
     //Hire-Us
     if ($(window).width() > 1024) {
       $(window).scroll(function() {
