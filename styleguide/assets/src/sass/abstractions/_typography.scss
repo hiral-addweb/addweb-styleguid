@@ -32,7 +32,7 @@
   margin-bottom: 10px;
   padding-bottom: 5px;
   border-bottom: 1px dotted $black-4a;
-  font-size: $font-size-28;
+  font-size: $font-size-20;
   font-family: $opensans-semibold;
 }
 
@@ -63,11 +63,14 @@
   width: 100%;
   margin-bottom: 10px;
   overflow: hidden;
-  font-size: $font-size-25;
+  font-size: $font-size-20;
   font-family: $opensans-semibold;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
+  a {
+    color: $black-4a;
+  }
 }
 /* End */
 
@@ -110,8 +113,17 @@
 /* End */
 
 /* Heading text design */
-.title-text {
+.text {
   font-size: $font-size-16;
   line-height: 25px;
+}
+/* End */
+
+/* Title large fonts design */
+.title-lg {
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $grey-c6;
+  font-size: $font-size-40;
 }
 /* End */

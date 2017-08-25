@@ -141,7 +141,7 @@
       border-left: none;
       background-color: $gray-47;
       color: $gray-b8;
-      font-size: $font-size-15;
+      font-size: $font-size-14;
       line-height: 18px;
       letter-spacing: 1px;
       text-decoration: none;
@@ -225,6 +225,22 @@
 }
 /* End */
 
+/* Comment tag */
+.comment-wrap {
+  display: block;
+  max-width: 507px;
+  margin: 52px auto;
+  padding: 13px;
+  background-color: $white-f5;
+  text-align: center;
+  .grey-bg-title {
+    display: inline-block;
+    color: $black-31;
+    font-family: $opensans-semibold;
+  }
+}
+/* End */
+
 
 /* Text translate effect */
 .text-slide {
@@ -286,7 +302,10 @@
 
 /* Pipe sign design */
 .texonomy-tearms {
-  a {
+  > a,
+  > span,
+  > div {
+    display: inline-block;
     &::after {
       display: inline-block;
       padding: 0 5px;
@@ -539,6 +558,26 @@
         font-family: $opensans-bolditalic;
         vertical-align: bottom;
         opacity: .6;
+      }
+    }
+  }
+}
+/* End */
+
+/* Date Archive dessign */
+.date-list {
+  .year-title {
+    margin: 10px 0 20px;
+    font-size: $font-size-28;
+  }
+  ul {
+    margin-bottom: 25px;
+    li {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 15px;
+      a {
+        font-family: $opensans-light;
       }
     }
   }
