@@ -3,23 +3,17 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var notify = require('gulp-notify');
 
-var paths = {
-  scripts: ['../styleguide/assets/src/js/**/*.coffee.js', '../styleguide/assets/js/**/*.coffee.js'],
-  // js: ['../assets/src/js/**/*.js', '../assets/js/**/*.js'],
-  images: ['../styleguide/assets/src/images/**/*', '../styleguide/assets/images'],
-  // sass: ['../styleguide/assets/src/sass/**/*', '../styleguide/assets/css']
-};
 
-
-
-// Not all tasks need to use streams 
-// A gulpfile is just another node program and you can use any package available on npm
+/**
+ * Not all tasks need to use streams
+ * A gulpfile is just another node program and you can use any package available on npm
+ */
 var del = require('del');
 gulp.task('clean', function() {
   // You can use multiple globbing patterns as you would with `gulp.src` 
   return del(['build']);
 });
-
+/* End */
 
 
 /**
@@ -46,8 +40,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(cssDst))
     .pipe(notify({message: 'SCSS compiled'}));
 });
-// End
-
+/* End */
 
 
 /**
@@ -60,13 +53,7 @@ var coffeeSrc    = '../styleguide/assets/src/coffee-scripts/**/*.coffee.js',
     coffeeDst     = '../styleguide/assets/coffee-scripts';
 var jsSrc    = '../styleguide/assets/src/js/**/*.js',
     jsDst     = '../styleguide/assets/js';
-
-// var config = {
-//   js: '../styleguide/assets/src/js/**/*.js',
-//   jsDest: '../styleguide/assets/js',
-//   jsDest2: '../sites/all/themes/northern_silica/js',
-// };
-gulp.task('scripts', ['clean'], function() {
+gulp.task('coffeescripts', ['clean'], function() {
   // Minify and copy all JavaScript (except vendor scripts) 
   // with sourcemaps all the way down 
   return gulp.src(coffeeSrc)
@@ -76,7 +63,7 @@ gulp.task('scripts', ['clean'], function() {
       .pipe(concat('all.min.coffee.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(coffeeDst))
-    .pipe(notify({message: 'JS compiled'}));
+    .pipe(notify({message: 'Coffee Scripts compiled'}));
 });
 gulp.task('scripts', ['clean'], function() {
   return gulp.src(jsSrc)
@@ -87,33 +74,39 @@ gulp.task('scripts', ['clean'], function() {
     .pipe(gulp.dest(jsDst))
     .pipe(notify({message: 'JS compiled'}));
 });
-// End
-
+/* End */
 
 
 /**
  * Image minify
  */
 var imagemin = require('gulp-imagemin');
+// Path
+var imgSrc    = '../styleguide/assets/src/images/**/*',
+    imgDst     = '../styleguide/assets/images';
 // Copy all static images 
 gulp.task('images', ['clean'], function() {
-  return gulp.src(paths.images)
+  return gulp.src(imgSrc)
     // Pass in options to the task 
     .pipe(imagemin({optimizationLevel: 10}))
-    .pipe(gulp.dest('../styleguide/assets/images'))
+    .pipe(gulp.dest(imgDst))
     .pipe(notify({message: 'Images compiled'}));
 });
-// End
+/* End */
 
 
-
-// Rerun the task when a file changes 
+/**
+ * Rerun the task when a file changes
+ */
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['scripts']);
-  // gulp.watch(paths.images, ['images']);
+  gulp.watch(coffeeSrc, ['coffeescripts']);
+  gulp.watch(jsSrc, ['scripts']);
+  gulp.watch(imgSrc, ['images']);
   gulp.watch(scssSrc, ['sass']);
   gulp.watch(scssSrc, ['scss-lint']);
 });
- 
+/* End */
+
+
 // The default task (called when you run `gulp` from cli) 
-gulp.task('default', ['watch', 'scripts', 'sass', 'scss-lint']); // 'images', 
+gulp.task('default', ['watch', 'coffeescripts', 'scripts', 'sass', 'scss-lint']); // 'images',
