@@ -56,6 +56,8 @@ gulp.task('sass', function () {
 var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
 // Path
+var coffeeSrc    = '../styleguide/assets/src/coffee-scripts/**/*.coffee.js',
+    coffeeDst     = '../styleguide/assets/coffee-scripts';
 var jsSrc    = '../styleguide/assets/src/js/**/*.js',
     jsDst     = '../styleguide/assets/js';
 
@@ -64,18 +66,18 @@ var jsSrc    = '../styleguide/assets/src/js/**/*.js',
 //   jsDest: '../styleguide/assets/js',
 //   jsDest2: '../sites/all/themes/northern_silica/js',
 // };
-/*gulp.task('scripts', ['clean'], function() {
+gulp.task('scripts', ['clean'], function() {
   // Minify and copy all JavaScript (except vendor scripts) 
   // with sourcemaps all the way down 
-  return gulp.src(paths.scripts)
+  return gulp.src(coffeeSrc)
     .pipe(sourcemaps.init())
       .pipe(coffee())
       .pipe(uglify())
       .pipe(concat('all.min.coffee.js'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('../styleguide/assets/js'))
+    .pipe(gulp.dest(coffeeDst))
     .pipe(notify({message: 'JS compiled'}));
-});*/
+});
 gulp.task('scripts', ['clean'], function() {
   return gulp.src(jsSrc)
     .pipe(sourcemaps.init())
@@ -108,7 +110,7 @@ gulp.task('images', ['clean'], function() {
 // Rerun the task when a file changes 
 gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.images, ['images']);
+  // gulp.watch(paths.images, ['images']);
   gulp.watch(scssSrc, ['sass']);
   gulp.watch(scssSrc, ['scss-lint']);
 });
