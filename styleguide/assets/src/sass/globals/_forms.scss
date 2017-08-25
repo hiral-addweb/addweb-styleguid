@@ -22,7 +22,7 @@ select,
   padding: 12px 24px;
   border: none;
   color: $black;
-  font-size: $font-size-26;
+  font-size: $font-size-16;
   font-family: $opensans-regular;
   @include box-shadow(none);
   @include border-radius(4px);
@@ -43,47 +43,4 @@ textarea {
   .grippie {
     display: none;
   }
-}
-
-
-/* Buttons design */
-.btn {
-  display: inline-block;
-  height: 38px;
-  width: 122px;
-  padding: 7px 15px;
-  border: 2px solid $blue-6f;
-  @include background ($blue-15, $blue-15, $blue-86, $blue-86);
-  @include border-radius(4px);
-  color: $white;
-  font-size: $font-size-30;
-  text-align: center;
-  text-decoration: none;
-  text-transform: capitalize;
-  @include box-shadow(none);
-  &:hover,
-  &:active,
-  &:visited,
-  &:focus,
-  &:active:focus {
-    @include background ($blue-72, $blue-72, $dark-blue, $dark-blue);
-    color: $white;
-  }
-}
-
-.btn-md {
-  height: 64px;
-  width: 270px;
-  padding: 15px;
-  font-size: $font-size-30;
-}
-
-.btn-sm {
-  height: 50px;
-  width: 162px;
-  padding: 9px;
-}
-
-.btn-lg {
-  width: 100%;
 }

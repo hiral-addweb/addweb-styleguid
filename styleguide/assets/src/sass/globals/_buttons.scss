@@ -10,3 +10,55 @@
     /* code */
   }
 }
+
+
+/* Buttons design */
+.btn {
+  display: inline-block;
+  height: 38px;
+  width: 122px;
+  padding: 7px 15px;
+  border: 2px solid $blue-6f;
+  @include background ($blue-15, $blue-15, $blue-86, $blue-86);
+  @include border-radius(4px);
+  color: $white;
+  font-size: $font-size-16;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  @include box-shadow(none);
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus,
+  &:active:focus {
+    @include background ($blue-72, $blue-72, $dark-blue, $dark-blue);
+    color: $white;
+  }
+}
+
+.btn-md {
+  height: 64px;
+  width: 270px;
+  padding: 15px;
+  font-size: $font-size-24;
+}
+
+.btn-sm {
+  height: 50px;
+  width: 162px;
+  padding: 9px;
+}
+
+.btn-lg {
+  width: 100%;
+}
+
+/* Left top bottom borader radius 0 */
+.radius-top-bottom-left-0 {
+  @include border-radius(0 3px 3px 0);
+}
+/* Right top bottom borader radius 0 */
+.radius-top-bottom-right-0 {
+  @include border-radius(3px 0 0 3px);
+}

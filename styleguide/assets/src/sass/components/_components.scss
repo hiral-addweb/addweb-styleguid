@@ -5,16 +5,6 @@
  * Components design.
  */
 
-
-/* Left top bottom borader radius 0 */
-.radius-top-bottom-left-0 {
-  @include border-radius(0 3px 3px 0);
-}
-/* Right top bottom borader radius 0 */
-.radius-top-bottom-right-0 {
-  @include border-radius(3px 0 0 3px);
-}
-
 .white-text {
   @include font-color-set-white();
 }
@@ -371,7 +361,7 @@
   }
   p {
     margin-bottom: 35px;
-    font-size: $font-size-40;
+    font-size: $font-size-30;
     font-family: $opensans-light;
   }
   form {
@@ -433,18 +423,18 @@
   }
   h2 {
     margin-top: 0;
-    font-size: $font-size-160;
+    font-size: $font-size-100;
     font-family: $opensans-bold;
   }
   h4 {
     margin-bottom: 20px;
     color: $orange-f4 !important;
-    font-size: $font-size-30;
+    font-size: $font-size-26;
     font-family: $opensans-bold;
   }
   p {
     max-width: 600px;
-    font-size: $font-size-40;
+    font-size: $font-size-30;
     line-height: 40px;
     font-family: $opensans-light;
     letter-spacing: 1.7px;
@@ -455,7 +445,7 @@
     margin-top: 30px;
     padding: 18px 20px;
     background-color: $orange-f4;
-    font-size: 15px;
+    font-size: $font-size-18;
     line-height: 25px;
     font-family: $opensans-regular;
     text-align: center;

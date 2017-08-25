@@ -58,6 +58,12 @@
         }
       }
     }
+    .blog__title {
+      margin-bottom: 10px;
+      a {
+        font-size: $font-size-17;
+      }
+    }
     &:first-child {
       margin-right: 4%;
       .blogs__upper {
@@ -131,6 +137,7 @@
   padding: 60px 0;
 }
 .card {
+  min-height: 370px;
   margin-bottom: 30px;
   padding: 15px 20px;
   background-color: $white;
@@ -139,19 +146,29 @@
     margin: 15px 0;
     a {
       color: $black;
-      font-size: $font-size-30;
+      font-size: $font-size-20;
     }
   }
   .card__content {
+    font-size: $font-size-16;
+    line-height: 25px;
     p {
-      font-size: $font-size-20;
-      line-height: 25px;
+      font-size: inherit;
+      line-height: inherit;
       font-family: $opensans-light;
     }
     a {
       display: inline-block;
       padding-top: 20px;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      text-decoration: underline;
+    }
+  }
+  &:hover {
+    background-color: $blue-b1;
+    color: $white;
+    a {
+      color: $white;
     }
   }
 }
