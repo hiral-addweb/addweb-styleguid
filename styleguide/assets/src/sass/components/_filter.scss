@@ -44,19 +44,32 @@
     display: inline-block;
     width: 100%;
     margin: 0 0 30px;
-    padding: 1vw;
-    border: 1px solid #grey-cc;
+    padding: 2vw;
+    border: 1px solid $grey-f1;
+    border-bottom-width: 4px;
+    background-color: $grey-fc;
     .filter__item-img {
       float: left;
-      min-height: 100px;
-      min-width: 100px;
-      background-color: $grey-cc;
+      min-height: 76px;
+      width: 76px;
+      margin: 0 2vw 0 0;
+      border: 1px solid #grey-f1;
+      background-color: $grey-fc;
+      background-image: url('../images/no-image.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 70% auto;
+      @include border-radius(8px);
+      img {
+        height: auto;
+        width: 100%;
+      }
     }
     .filter__item-body {
       float: left;
       display: inline-block;
-      @include calc('width', '100% - 120px');
-      margin-left: 20px;
+      @include calc('width', '100% - 76px - 2vw');
+      margin: 0;
     }
   }
 }

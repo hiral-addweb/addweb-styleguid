@@ -5,19 +5,27 @@
  * Design of Typography.
  */
 
+
+/**
+ * Header, Paragraph & Text
+ */
+.font-blue-italic {
+  color: $blue-link;
+  font-style: italic;
+  font-family: $opensans-italic;
+}
+.font-lg {
+  font-size: $font-size-26;
+}
+
+
 /* Alignment */
 .flex { @include flexbox(); }
-
 .inline-flex { @include inline-flex; }
-
 .flex-wrap { @include flex-wrap(wrap) }
-
 .vertical-align-top { @include align-items(flex-start); }
-
 .vertical-align-bottom { @include align-items(flex-end); }
-
 .vertical-align-middle { @include align-items(center); }
-
 
 /* Bottom dotted border title design */
 .title-border {
