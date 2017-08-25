@@ -36,13 +36,13 @@ ul.social-icons {
     }
     &.drupal {
       &:hover {
-        a { color: #0075BB; }
+        a { color: $blue-07; }
       }
     }
     &.facebook {
       &:hover {
         a {
-          color: #3B579D;
+          color: $blue-3b;
         }
       }
       a {
@@ -51,7 +51,7 @@ ul.social-icons {
     }
     &.googleplus {
       &:hover {
-        a { color: #DB4437; }
+        a { color: $red-db; }
       }
       a {
         &::before { content: '\f0d5'; }
@@ -59,7 +59,7 @@ ul.social-icons {
     }
     &.skype {
       &:hover {
-        a { color: #55ACEE; }
+        a { color: $sky-55; }
       }
       a {
         &::before { content: '\f17e'; }
@@ -67,7 +67,7 @@ ul.social-icons {
     }
     &.email {
       &:hover {
-        a { color: #DC4034; }
+        a { color: $red-dc; }
       }
       a {
         &::before { content: '\f003'; }
@@ -75,7 +75,7 @@ ul.social-icons {
     }
     &.linkedin {
       &:hover {
-        a { color: #0177B5; }
+        a { color: $blue-01; }
       }
       a {
         &::before { content: '\f0e1'; }
@@ -83,7 +83,7 @@ ul.social-icons {
     }
     &.twitter {
       &:hover {
-        a { color: #1DA1F2; }
+        a { color: $sky-1d; }
       }
       a {
         &::before { content: '\f099'; }
@@ -91,7 +91,7 @@ ul.social-icons {
     }
     &.Youtube {
       &:hover {
-        a { color: #C2171D; }
+        a { color: $red-c2; }
       }
       a {
         &::before { content: '\f16a'; }
@@ -119,3 +119,50 @@ ul.social-icons {
   }
 }
 /* End */
+
+/* Social color icon design */
+.social-color-icons {
+  display: inline-block;
+  text-align: center;
+  .share-title {
+    margin-bottom: 18px;
+    color: $black-4a;
+    font-size: $font-size-13;
+    font-family: $opensans-semibold;
+    text-transform: uppercase;
+    opacity: .5;
+  }
+
+  .social-icons {
+    width: 100%;
+    li {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        &::before {
+          font-size: 30px;
+        }
+      }
+      &.facebook {
+        a {
+          color: $blue-3b;
+        }
+      }
+      &.twitter {
+        a {
+          color: $sky-1d;
+        }
+      }
+      &.googleplus {
+        a {
+          color: $red-db;
+          &::before { font-size: 25px; }
+        }
+      }
+    }
+  }
+}

@@ -271,6 +271,19 @@
 }
 /* End */
 
+/* Breadcrumb design */
+.breadcrumb-link {
+  margin-top: 30px;
+  margin-bottom: 44px;
+  li {
+    a {
+      font-size: $font-size-20;
+      font-family: $opensans-regular;
+    }
+  }
+}
+/* End */
+
 /* Pipe sign design */
 .texonomy-tearms {
   a {
@@ -479,6 +492,55 @@
   }
   p {
     max-width: 100%;
+  }
+}
+/* End */
+
+/**
+ * Profile section design
+ */
+.profile__info {
+  margin-bottom: 30px;
+  text-align: center;
+  .author__info {
+    display: inline-block;
+    padding-right: 50px;
+    .author-img {
+      display: inline-block;
+      img {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+      }
+    }
+    .author-name {
+      a {
+        font-size: $font-size-14;
+        font-family: $opensans-bolditalic;
+      }
+    }
+  }
+  .date__info {
+    display: inline-block;
+    &::before {
+      display: inline-block;
+      height: 37px;
+      width: 37px;
+      background-image: url('../images/calendar.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      vertical-align: middle;
+      content: '';
+    }
+    .date-number {
+      span {
+        color: $black-4a;
+        font-size: $font-size-14;
+        font-family: $opensans-bolditalic;
+        vertical-align: bottom;
+        opacity: .6;
+      }
+    }
   }
 }
 /* End */

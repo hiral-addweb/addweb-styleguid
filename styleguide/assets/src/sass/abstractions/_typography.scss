@@ -81,6 +81,15 @@
 }
 /* End */
 
+/* Italic Title design */
+.title--italic {
+  margin-bottom: 40px;
+  font-size: $font-size-33;
+  font-family: $opensans-bolditalic;
+  text-transform: capitalize;
+}
+/* End */
+
 /* Read more icon design */
 .read-more-icon {
   position: relative;
