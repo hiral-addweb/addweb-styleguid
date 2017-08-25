@@ -39,14 +39,15 @@
       }
       input[type='radio'] {
         position: absolute;
-        opacity: 0;
         margin: 0;
+        opacity: 0;
       }
     }
   }
 }
 .filter__content {
   .filter__item {
+    position: relative;
     display: inline-block;
     width: 100%;
     margin: 0 0 30px;
@@ -76,6 +77,22 @@
       display: inline-block;
       @include calc('width', '100% - 76px - 2vw');
       margin: 0;
+      h2 {
+        margin: 0 0 2px;
+        font-size: $font-size-18;
+        font-family: $opensans-semibold;
+      }
+      .filter__item-technology {
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 1vw;
+        font-size: $font-size-14;
+        font-family: $opensans-light;
+      }
+      .filter__item-txt {
+        font-size: $font-size-14;
+        font-family: $opensans-light;
+      }
     }
   }
 }
