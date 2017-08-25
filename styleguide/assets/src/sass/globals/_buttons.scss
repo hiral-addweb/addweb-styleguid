@@ -17,7 +17,7 @@
   position: relative;
   display: inline-block;
   height: 38px;
-  /*width: 122px;*/
+  width: 122px;
   padding: 6px 15px;
   border: 2px solid $blue-6f;
   @include background ($blue-15, $blue-15, $blue-86, $blue-86);
@@ -59,17 +59,28 @@
   background-color: $grey-e7;
   background-image: none;
   color: $black-4a;
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus:active {
     background-color: $grey-e7;
     background-image: none;
+    color: $black-4a;
   }
 }
 
 .btn-switch {
+  height: auto;
+  width: auto;
+  padding: .4vw .6vw 0;
   border: none;
-  @include box-shadow(0 3px 0 0 rgba(192, 192, 192, .8));
+  @include box-shadow(0 4px 0 0 rgba(192, 192, 192, .8));
   &:hover {
     top: 1px;
+    @include box-shadow(0 3px 0 0 rgba(192, 192, 192, .8));
+  }
+  &:focus {
+    top: 2px;
     @include box-shadow(0 2px 0 0 rgba(192, 192, 192, .8));
   }
 }
