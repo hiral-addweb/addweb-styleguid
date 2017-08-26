@@ -5,7 +5,8 @@
  * Layout SCSS.
  */
 @import 'abstractions/variable';
-/*@import 'abstractions/typography';*/
+@import 'abstractions/mixins';
+@import 'abstractions/typography';
 
 .blog__share {
   position: relative;
@@ -21,6 +22,7 @@
   }
 }
 
+/* Blog description design */
 .blog-wraper-main {
   .field-description {
     p {
@@ -30,10 +32,19 @@
       color: $black-4a;
       font-size: $font-size-17;
       line-height: 27px;
-      /*@extend .blue-link;*/
+      @extend .blue-link;
       a {
         display: inline-block;
       }
     }
+  }
+}
+
+/* Related blog grid design*/
+.related__blogs {
+  margin-bottom: 65px;
+  .page-title {
+    width: 100%;
+    border-bottom: none;
   }
 }

@@ -196,3 +196,76 @@
   }
 }
 /* End */
+
+/* Blog detail card design */
+.card__blog {
+  padding: 0;
+  border: 1px solid $grey-cc;
+  @include box-shadow(none);
+  &:hover {
+    .blog__person__detail {
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
+  }
+  .related__blog__detail {
+    padding: 10px;
+    p {
+      font-size: $font-size-14;
+      line-height: 25px;
+    }
+    h3 {
+      font-size: $font-size-17;
+      font-family: $opensans-semibold;
+    }
+  }
+  .blog__person__detail {
+    padding: 6px 10px;
+    border-bottom: none;
+    border-top-color: $grey-9e;
+    font-size: $font-size-14;
+  }
+}
+
+/* Portfolio card design */
+.card__portfolio {
+  margin-bottom: 30px;
+  padding: 0;
+  @include box-shadow(none);
+  .card__img {
+    display: inline-block;
+    background-image: url('../images/Browser_bg.png');
+    background-size: 100% auto;
+    img {
+      padding-top: 24px;
+    }
+  }
+  .card__title {
+    margin: 15px 0 8px;
+    a {
+      color: $black-31;
+      font-size: $font-size-18;
+      opacity: .7;
+    }
+  }
+  .card__tags {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 8px;
+    a {
+      display: inline-block;
+      font-size: $font-size-14;
+      &::after {
+        content: ',';
+      }
+      &:last-child {
+        &::after { display: none; }
+      }
+    }
+  }
+  .card__content {
+    font-size: $font-size-14;
+  }
+}
