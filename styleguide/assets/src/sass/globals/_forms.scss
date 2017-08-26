@@ -20,14 +20,14 @@ select,
   height: 50px;
   width: 100%;
   padding: 12px 24px;
-  border: none;
+  border: 1px solid $grey-cc;
   color: $black;
   font-size: $font-size-16;
   font-family: $opensans-regular;
   @include box-shadow(none);
   @include border-radius(4px);
   &:focus {
-    border: none;
+    border: 1px solid $grey-cc;
     outline: none;
     @include box-shadow(none);
   }
@@ -44,3 +44,42 @@ textarea {
     display: none;
   }
 }
+
+
+/* Search section design */
+.search-area {
+  display: inline-block;
+  width: 100%;
+  margin: 5vw 0;
+  .form-item,
+  .form-actions {
+    float: left;
+  }
+  .text-field {
+    width: 62%;
+    input {
+      @extend .radius-top-bottom-right-0;
+    }
+  }
+  .select-field {
+    width: 22%;
+  }
+  .form-actions {
+    width: 16%;
+    .btn {
+      height: 50px;
+      @extend .radius-top-bottom-left-0;
+    }
+  }
+  .selectric {
+    height: 50px;
+    .label {
+      height: 50px;
+      line-height: 50px;
+    }
+    .button {
+      height: 50px;
+    }
+  }
+}
+/* End */

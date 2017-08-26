@@ -1,6 +1,13 @@
 (function ($) {
   $(function() {
-    /* Sticky Header */
+    
+    //  Selectric js
+    jQuery(function() {
+      jQuery('.search-area select').selectric();
+    });
+    // End
+
+    // Sticky Header
     jQuery(window).scroll(function() {
       var scrolled = jQuery(window).scrollTop();
       if(scrolled >= 52) {
