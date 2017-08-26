@@ -1,20 +1,30 @@
 (function ($) {
   $(function() {
-    
+
     //  Selectric js
-    jQuery(function() {
-      jQuery('.search-area select').selectric();
+    $(function() {
+      $('.search-area select').selectric();
     });
     // End
 
+    // Added technology name class of Portfolio filter section
+    setTimeout(function(){
+      $('.search-area ul li').each(function() {
+        var technology_list = $(this).text();
+        technology_list = technology_list.toLowerCase().replace(' ', '-');
+        $(this).attr('class', technology_list);
+      });
+    }, 100);
+
+
     // Sticky Header
-    jQuery(window).scroll(function() {
-      var scrolled = jQuery(window).scrollTop();
+    $(window).scroll(function() {
+      var scrolled = $(window).scrollTop();
       if(scrolled >= 52) {
-        jQuery('body').addClass('sticky-header');
+        $('body').addClass('sticky-header');
       }
       else {
-        jQuery('body').removeClass('sticky-header');
+        $('body').removeClass('sticky-header');
       }
     });
     //Hire-Us
