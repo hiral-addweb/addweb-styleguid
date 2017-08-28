@@ -101,6 +101,9 @@
 /* Latest blog card design */
 .latest-blog-wrap {
   position: relative;
+  @media (max-width: $ipad-portrait) {
+    margin-bottom: 10px;
+  }
   &.blog-lg {
     .image-caption {
       padding: 0;

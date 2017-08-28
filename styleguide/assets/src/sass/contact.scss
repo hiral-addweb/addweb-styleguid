@@ -63,5 +63,15 @@
   }
 }
 
-/*.contect-markup-text {
-}*/
+.contect-markup-text {
+  padding: 30px 0 50px;
+  h1 {
+    font-size: $font-size-60;
+  }
+  .text {
+    font-size: $font-size-26;
+    line-height: 36px;
+    font-family: $opensans-light;
+    letter-spacing: .14px;
+  }
+}

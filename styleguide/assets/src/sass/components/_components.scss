@@ -291,17 +291,30 @@
     width: 100%;
     padding: 50px;
     @include transform(translateY(-50%));
+    @media (max-width: 767px) {
+      padding: 30px;
+    }
   }
   h2 {
     margin-top: 0;
     font-size: $font-size-100;
     font-family: $opensans-bold;
+    @media (max-width: 992px) {
+      font-size: $font-size-60;
+    }
+    @media (max-width: 767px) {
+      font-size: $font-size-30;
+    }
   }
   h4 {
     margin-bottom: 20px;
     color: $orange-f4 !important;
     font-size: $font-size-26;
     font-family: $opensans-bold;
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+      font-size: $font-size-20;
+    }
   }
   p {
     max-width: 600px;
@@ -309,6 +322,15 @@
     line-height: 40px;
     font-family: $opensans-light;
     letter-spacing: 1.7px;
+    @media (max-width: 992px) {
+      font-size: $font-size-22;
+      line-height: 30px;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 767px) {
+      font-size: $font-size-18;
+      line-height: 22px;
+    }
   }
   .meet-btn {
     display: inline-block;
@@ -322,6 +344,11 @@
     text-align: center;
     text-decoration: none;
     @include border-radius(3px);
+    @media (max-width: 767px) {
+      min-width: 170px;
+      margin-top: 5px;
+      padding: 10px;
+    }
   }
 }
 /* End */
