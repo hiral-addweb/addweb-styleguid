@@ -294,6 +294,9 @@
     @media (max-width: 767px) {
       padding: 30px;
     }
+    @media (max-width: 480px) {
+      padding: 15px;
+    }
   }
   h2 {
     margin-top: 0;
@@ -305,6 +308,9 @@
     @media (max-width: 767px) {
       font-size: $font-size-30;
     }
+    @media (max-width: 640px) {
+      font-size: $font-size-22;
+    }
   }
   h4 {
     margin-bottom: 20px;
@@ -314,6 +320,10 @@
     @media (max-width: 767px) {
       margin-bottom: 12px;
       font-size: $font-size-20;
+    }
+    @media (max-width: 640px) {
+      margin-bottom: 4px;
+      font-size: $font-size-17;
     }
   }
   p {
@@ -330,6 +340,10 @@
     @media (max-width: 767px) {
       font-size: $font-size-18;
       line-height: 22px;
+    }
+    @media (max-width: 480px) {
+      font-size: $font-size-15;
+      line-height: 18px;
     }
   }
   .meet-btn {
@@ -348,6 +362,11 @@
       min-width: 170px;
       margin-top: 5px;
       padding: 10px;
+    }
+    @media (max-width: 480px) {
+      min-width: 130px;
+      margin-top: 0;
+      padding: 5px;
     }
   }
 }
