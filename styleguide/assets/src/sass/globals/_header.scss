@@ -286,7 +286,7 @@
           }
           a {
             border: none;
-            color: $black-44;
+            color: $black-44 !important;
             @media (min-width: 993px) {
               float: left;
               min-width: 131px;

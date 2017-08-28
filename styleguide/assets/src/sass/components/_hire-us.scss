@@ -1,0 +1,109 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Hire us section SCSS
+ */
+
+
+.hire-us {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  min-height: 510px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 120px 0;
+  background-image: url('../images/hireus-bg.jpg');
+  background-size: cover;
+  color: $white;
+  text-align: center;
+  @include transition(all .5s ease 0s);
+  @media (max-width: 992px) {
+    min-height: 410px;
+    padding: 80px 0;
+  }
+  @media (max-width: 767px) {
+    min-height: 340px;
+    padding: 60px 0;
+  }
+  h2 {
+    color: $white;
+    font-size: $font-size-80;
+    text-transform: capitalize;
+    @media (max-width: 767px) {
+      font-size: $font-size-60;
+    }
+  }
+  div {
+    position: relative;
+    display: inline-block;
+    max-width: 1170px;
+    width: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: -115px;
+      @media (max-width: 1199px) {
+        max-width: 200px;
+        margin-top: -90px;
+        margin-left: 10px;
+      }
+      @media (max-width: 992px) {
+        max-width: 150px;
+        margin-top: -50px;
+        margin-left: 10px;
+      }
+      @media (max-width: 640px) {
+        position: relative;
+        margin-top: 10px;
+      }
+    }
+    a {
+      display: inline-block;
+      padding: 20px 30px;
+      background-color: #FBAC5F;
+      color: $white;
+      font-size: $font-size-30;
+      @include border-radius(4px);
+      &:hover {
+        text-decoration: none;
+        opacity: .9;
+      }
+      @media (max-width: 992px) {
+        padding: 15px 20px;
+        font-size: $font-size-18;
+      }
+      @media (max-width: 767px) {
+        padding: 10px 15px;
+        font-size: $font-size-16;
+      }
+    }
+    h4 {
+      display: block;
+      max-width: 700px;
+      margin: 30px auto;
+      color: $white;
+      font-size: $font-size-28;
+      line-height: 1.3;
+      font-family: $opensans-regular;
+      @media (max-width: 1199px) {
+        max-width: 650px;
+      }
+      @media (max-width: 992px) {
+        max-width: 550px;
+        margin: 20px auto;
+        padding-left: 30px;
+      }
+      @media (max-width: 767px) {
+        max-width: 400px;
+        font-size: $font-size-20;
+      }
+    }
+  }
+  &.reveal-footer {
+    @include transform(scale(.9) translate3d(0, 5%, 0));
+    @include box-shadow(0 90px 90px -80px rgba(0, 0, 0, .75));
+  }
+}

@@ -7,9 +7,12 @@
  */
 
 .form-item {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
-.full-width { width: 100% !important; }
+.full-width {
+  width: 100% !important;
+  margin-right: 0 !important;
+}
 
 input[type='text'],
 input[type='email'],
@@ -42,6 +45,7 @@ select,
 .resizable-textarea textarea,
 textarea {
   height: 166px;
+  max-width: 100%;
 }
 .webform-component-textarea {
   .grippie {

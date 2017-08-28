@@ -98,6 +98,60 @@ ul.social-icons {
       }
     }
   }
+  &.bg-icon {
+    li {
+      width: 100%;
+      a {
+        color: $black-4a;
+        font-size: $font-size-16;
+        vertical-align: middle;
+        &::before {
+          height: 46px;
+          width: 46px;
+          margin-right: 10px;
+          padding: 10px;
+          background-color: $blue-light;
+          color: $white;
+          font-size: $font-size-24;
+          text-align: center;
+          vertical-align: middle;
+          @include border-radius(100%);
+        }
+        &:hover {
+          text-decoration: underline;
+          &::before {
+            color: $white;
+          }
+        }
+      }
+      &.email {
+        a {
+          &::before {
+            background-color: $light-green;
+          }
+        }
+      }
+      &.twitter {
+        a {
+          &::before {
+            background-color: $blue-twitter;
+          }
+        }
+      }
+      &.linkedin {
+        a {
+          &::before {
+            background-color: $blue-01;
+          }
+        }
+      }
+      &:hover {
+        a {
+          color: $black-4a;
+        }
+      }
+    }
+  }
 }
 
 /* Social icon Zoom effect */
@@ -132,7 +186,6 @@ ul.social-icons {
     text-transform: uppercase;
     opacity: .5;
   }
-
   .social-icons {
     width: 100%;
     li {
@@ -166,3 +219,72 @@ ul.social-icons {
     }
   }
 }
+
+
+/* Site Icons design */
+.icon {
+  position: relative;
+  a,
+  span {
+    padding-left: 30px;
+    &::before {
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      height: 18px;
+      width: 23px;
+      background-image: url('../images/contact-icons.png');
+      background-repeat: no-repeat;
+      vertical-align: top;
+      content: '';
+    }
+  }
+  &.skype-icon {
+    a,
+    span {
+      &::before {
+        background-position: right 0;
+        background-size: 200px;
+      }
+    }
+  }
+  &.flag-icon {
+    a,
+    span {
+      &::before {
+        background-image: $contact-icon;
+        background-position: top 2px left -28px;
+        background-size: 163px;
+      }
+    }
+  }
+  &.email-icon {
+    a,
+    span {
+      &::before {
+        background-position: -57px 1px;
+        background-size: 170px;
+      }
+    }
+  }
+  &.icon-calander,
+  &.icon-chat {
+    a,
+    span {
+      &::before {
+        background-image: url('../images/blog_icons.svg');
+        background-position: -49px -49px;
+        background-size: 167px 155px;
+      }
+    }
+  }
+  &.icon-chat {
+    a,
+    span {
+      &::before {
+        background-position: -71px -49px;
+      }
+    }
+  }
+}
+/* End */

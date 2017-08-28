@@ -127,3 +127,15 @@
   font-size: $font-size-40;
 }
 /* End */
+
+/* Double Color title text design */
+.double-color-title {
+  color: $black-31;
+  font-size: $font-size-33;
+  .blue-text {
+    color: $blue-07;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+/* End */

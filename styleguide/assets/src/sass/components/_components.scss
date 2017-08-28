@@ -26,110 +26,6 @@
   }
 }
 
-/* Hire us section desin */
-.hire-us {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  min-height: 510px;
-  width: 100%;
-  margin-top: 30px;
-  padding: 120px 0;
-  background-image: url('../images/hireus-bg.jpg');
-  background-size: cover;
-  color: $white;
-  text-align: center;
-  @include transition(all .5s ease 0s);
-  @media (max-width: 992px) {
-    min-height: 410px;
-    padding: 80px 0;
-  }
-  @media (max-width: 767px) {
-    min-height: 340px;
-    padding: 60px 0;
-  }
-  h2 {
-    color: $white;
-    font-size: $font-size-80;
-    text-transform: capitalize;
-    @media (max-width: 767px) {
-      font-size: $font-size-60;
-    }
-  }
-  div {
-    position: relative;
-    display: inline-block;
-    max-width: 1170px;
-    width: 100%;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin-top: -115px;
-      @media (max-width: 1199px) {
-        max-width: 200px;
-        margin-top: -90px;
-        margin-left: 10px;
-      }
-      @media (max-width: 992px) {
-        max-width: 150px;
-        margin-top: -50px;
-        margin-left: 10px;
-      }
-      @media (max-width: 640px) {
-        position: relative;
-        margin-top: 10px;
-      }
-    }
-    a {
-      display: inline-block;
-      padding: 20px 30px;
-      background-color: #FBAC5F;
-      color: $white;
-      font-size: $font-size-30;
-      @include border-radius(4px);
-      &:hover {
-        text-decoration: none;
-        opacity: .9;
-      }
-      @media (max-width: 992px) {
-        padding: 15px 20px;
-        font-size: $font-size-18;
-      }
-      @media (max-width: 767px) {
-        padding: 10px 15px;
-        font-size: $font-size-16;
-      }
-    }
-    h4 {
-      display: block;
-      max-width: 700px;
-      margin: 30px auto;
-      color: $white;
-      font-size: $font-size-28;
-      line-height: 1.3;
-      font-family: $opensans-regular;
-      @media (max-width: 1199px) {
-        max-width: 650px;
-      }
-      @media (max-width: 992px) {
-        max-width: 550px;
-        margin: 20px auto;
-        padding-left: 30px;
-      }
-      @media (max-width: 767px) {
-        max-width: 400px;
-        font-size: $font-size-20;
-      }
-    }
-  }
-  &.reveal-footer {
-    @include transform(scale(.9) translate3d(0, 5%, 0));
-    @include box-shadow(0 90px 90px -80px rgba(0, 0, 0, .75));
-  }
-}
-/* End */
-
 /* Tag Cloud design */
 .tag-cloud {
   li {
@@ -151,74 +47,6 @@
       &:focus {
         background-color: $blue-00;
         color: $white;
-      }
-    }
-  }
-}
-/* End */
-
-/* Icons design */
-.icon {
-  position: relative;
-  a,
-  span {
-    padding-left: 30px;
-    &::before {
-      position: absolute;
-      left: 0;
-      display: inline-block;
-      height: 18px;
-      width: 23px;
-      background-image: url('../images/contact-icons.png');
-      background-repeat: no-repeat;
-      vertical-align: top;
-      content: '';
-    }
-  }
-  &.skype-icon {
-    a,
-    span {
-      &::before {
-        background-position: right 0;
-        background-size: 200px;
-      }
-    }
-  }
-  &.flag-icon {
-    a,
-    span {
-      &::before {
-        background-image: $contact-icon;
-        background-position: top 2px left -28px;
-        background-size: 163px;
-      }
-    }
-  }
-  &.email-icon {
-    a,
-    span {
-      &::before {
-        background-position: -57px 1px;
-        background-size: 170px;
-      }
-    }
-  }
-  &.icon-calander,
-  &.icon-chat {
-    a,
-    span {
-      &::before {
-        background-image: url('../images/blog_icons.svg');
-        background-position: -49px -49px;
-        background-size: 167px 155px;
-      }
-    }
-  }
-  &.icon-chat {
-    a,
-    span {
-      &::before {
-        background-position: -71px -49px;
       }
     }
   }
@@ -252,7 +80,6 @@
   }
 }
 /* End */
-
 
 /* Text translate effect */
 .text-slide {
@@ -499,7 +326,7 @@
 }
 /* End */
 
-/* Do you know section Desin */
+/* Do you know section Design */
 .hire-do-wrap {
   display: inline-block;
   width: 100%;
@@ -527,9 +354,7 @@
 }
 /* End */
 
-/**
- * Profile section design
- */
+/* Profile section design */
 .profile__info {
   margin-bottom: 30px;
   text-align: center;
@@ -576,26 +401,6 @@
 }
 /* End */
 
-/* Date Archive dessign */
-.date-list {
-  .year-title {
-    margin: 10px 0 20px;
-    font-size: $font-size-28;
-  }
-  ul {
-    margin-bottom: 25px;
-    li {
-      display: inline-block;
-      width: 100%;
-      margin-bottom: 15px;
-      a {
-        font-family: $opensans-light;
-      }
-    }
-  }
-}
-/* End */
-
 /* Search section design */
 .search-area {
   display: inline-block;
@@ -623,18 +428,18 @@
   }
   .selectric {
     height: 50px;
-    background-color: transparent;
+    background-color: $white;
     .label {
       height: 50px;
       line-height: 50px;
     }
     .button {
       height: 50px;
-      background-color: transparent;
+      background-color: $white;
     }
   }
   .selectric-items {
-    background-color: transparent;
+    background-color: $white;
   }
   ul {
     li {

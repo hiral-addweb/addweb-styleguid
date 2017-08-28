@@ -5,19 +5,63 @@
  * Contact SCSS.
  */
 @import 'abstractions/mixins';
+@import 'abstractions/variable';
 .contact-form {
   .form-item {
     float: left;
-    @include calc('width','50% - 13px');
+    @include calc('width' , '50% - 13px');
     margin-right: 26px;
     &:nth-child(2n) { margin-right: 0; }
   }
-}
-.contact__detail {
-
-}
-.contact__info {
-  h3 {
-    font-size: $font-size-18;
+  .form-actions {
+    .btn {
+      height: 60px;
+      font-size: $font-size-22;
+    }
   }
 }
+.contact__detail {
+  display: inline-block;
+  width: 100%;
+  padding: 50px;
+  .contact__info,
+  .contact-share {
+    float: left;
+    width: 40%;
+  }
+  .contact__info {
+    h3 {
+      font-size: $font-size-30;
+      font-family: $opensans-bold;
+      &::before {
+        display: inline-block;
+        height: 35px;
+        width: 35px;
+        margin-right: 10px;
+        background-image: url('../images/india_flag.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        vertical-align: middle;
+        content: '';
+      }
+    }
+    .usa__no {
+      padding-top: 32px;
+      h3 {
+        &::before {
+          background-image: url('../images/United-States_flag.png');
+        }
+      }
+    }
+    a {
+      color: $black-4a;
+    }
+  }
+  .contact-share {
+    width: 60%;
+  }
+}
+
+/*.contect-markup-text {
+}*/
