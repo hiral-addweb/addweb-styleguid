@@ -312,13 +312,11 @@
     left: 0;
     display: inline-block;
     width: 100%;
-    padding: 50px;
+    padding: 0 50px;
     @include transform(translateY(-50%));
     @media (max-width: 767px) {
-      padding: 30px;
-    }
-    @media (max-width: 480px) {
-      padding: 15px;
+      padding-right: 15px;
+      padding-left: 15px;
     }
   }
   h2 {
@@ -393,16 +391,24 @@
     }
   }
 }
+.meet-our-team {
+  img {
+    min-height: 200px;
+  }
+}
 /* End */
 
 /* Do you know section Design */
 .hire-do-wrap {
   display: inline-block;
   width: 100%;
-  padding: 70px 15px;
+  padding: 7vw 1vw 4vw;
   h2 {
     position: relative;
     margin-bottom: 50px;
+    @media (max-width: 767px) {
+      margin-bottom: 35px;
+    }
     &::after {
       position: absolute;
       top: auto;
@@ -415,6 +421,9 @@
       background-color: $black-44;
       @include transform(translateX(-50%));
       content: '';
+      @media (max-width: 767px) {
+        margin-bottom: -20px;
+      }
     }
   }
   p {
