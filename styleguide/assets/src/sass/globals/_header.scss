@@ -35,10 +35,22 @@
   @media (max-width: 640px) {
     padding-bottom: 30px;
   }
+  ul.social-icons {
+    margin-top: 4px;
+    @media (max-width: 992px) {
+      float: left;
+    }
+    @media (max-width: 767px) {
+      margin-top: 0;
+    }
+  }
 }
 
 .header-contact-wrap {
   display: inline-block;
+  @media (max-width: 992px) {
+    float: right;
+  }
   li {
     float: left;
     padding: 0 10px;
@@ -78,6 +90,18 @@
       font-size: $font-size-14;
       line-height: 24px;
     }
+    &.flag-icon {
+      a {
+        @media (max-width: 480px) {
+          padding-left: 0;
+        }
+        &::before {
+          @media (max-width: 480px) {
+            display: none;
+          }
+        }
+      }
+    }
   }
   @media (max-width: 767px) {
     margin-top: -6px;
@@ -96,6 +120,9 @@
   width: 100%;
   margin-top: 50px;
   text-align: center;
+  @media (max-width: 640px) {
+    margin-top: 56px;
+  }
 }
 /* End */
 
@@ -359,6 +386,88 @@
     }
   }
 }
+.mobile-menu-btn {
+  position: absolute;
+  display: inline-block;
+  visibility: hidden;
+  @media(max-width: 992px) {
+    top: 0;
+    right: 0;
+    margin: -35px 15px 0 0;
+    visibility: visible;
+  }
+  @media (max-width: 640px) {
+    margin: -41px 15px 0 0;
+  }
+  .icon-bar {
+    display: block;
+    height: 18px;
+    width: 24px;
+    margin-bottom: -10px;
+    border-top: 2px solid $white;
+  }
+}
+.social-icon-link {
+  display: none;
+}
+@media (max-width: 640px) {
+  a.social-icon-link {
+    position: relative;
+    z-index: 99999;
+    display: inline-block;
+    margin: 0 35px 0 0;
+    color: $white;
+    font-size: 0;
+    @include transition(all .5s ease 0s);
+    &::before {
+      display: inline-block;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-family: FontAwesome;
+      content: '\f1e0';
+    }
+    &.social-in {
+      margin: 0 8px 0 0 !important;
+    }
+  }
+  .social-icons {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 9999;
+    height: 100%;
+    width: 60px;
+    margin: 0 -60px 0 0;
+    padding: 40px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, .7);
+    @include transition(all .5s ease 0s);
+    &.show-icon {
+      margin-right: 0;
+      &::before {
+        display: inline-block;
+        height: 2px;
+        width: 100%;
+        background-color: $white;
+        content: '';
+      }
+    }
+    > li {
+      display: inline-block;
+      width: 100%;
+      margin-top: 25px;
+      text-align: center;
+      @include transition(all .5s ease);
+      a {
+        display: inline-block;
+        width: 20px;
+      }
+    }
+  }
+}
 /* End */
 
 /* Sticky header design */
@@ -387,7 +496,7 @@
   }
   .header {
     .main-menu {
-      margin-top: -38px;
+      margin-top: -40px;
       padding-bottom: 0;
       @media (max-width: 992px) {
         margin-top: 0;
@@ -446,9 +555,9 @@
         left: 0;
         height: 30px;
         width: 234px;
-        margin-top: -36px;
+        margin-top: -51px;
         margin-left: 8px;
-        background-image: url('/themes/custom/addweb/images/stickey-header-mobile-logo.png');
+        background-image: url('../images/stickey-header-mobile-logo.png');
         background-repeat: no-repeat;
         background-size: 234px;
         img {
@@ -458,7 +567,7 @@
     }
     .mobile-menu-btn {
       @media (max-width: 640px) {
-        margin-top: -30px;
+        margin-top: -45px;
       }
     }
   }

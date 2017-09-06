@@ -21,3 +21,22 @@
     }
   }
 }
+.front-latest-blog-title {
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 15px;
+  @media (max-width: 1200px) {
+    width: 970px;
+  }
+  @media (max-width: 992px) {
+    width: 750px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  .section-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

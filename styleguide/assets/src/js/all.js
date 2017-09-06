@@ -2,9 +2,9 @@
   $(function() {
 
     //  Selectric js
-    $(function() {
-      $('.search-area select').selectric();
-    });
+    // $(function() {
+    //   $('.search-area select').selectric();
+    // });
     // End
 
     // Added technology name class of Portfolio filter section
@@ -16,7 +16,6 @@
       });
     }, 100);
 
-
     // Sticky Header
     $(window).scroll(function() {
       var scrolled = $(window).scrollTop();
@@ -27,6 +26,7 @@
         $('body').removeClass('sticky-header');
       }
     });
+
     //Hire-Us
     if ($(window).width() > 1024) {
       $(window).scroll(function() {
@@ -56,5 +56,25 @@
         });
       });
     }
+
+    /* Responsive Menu */
+
+    // Add mobile menu link
+    // $('.main-menu ul li ul').parent('li').prepend('<div class="cart-arrow"></div>');
+    $('.mobile-menu-btn').click(function() {
+      alert('test');
+      $('.main-menu-left, .main-menu-right').slideToggle();
+    });
+
+    // $('.cart-arrow').click(function() {
+    //   if ($(this).siblings('ul').css('display') == 'block') {
+    //     $(this).siblings('ul').slideUp();
+    //   }
+    //   else {
+    //     $('.main-menu ul ul').slideUp();
+    //     $(this).siblings('ul').slideDown();
+    //   }
+    // });
+
   })
 })(jQuery);
